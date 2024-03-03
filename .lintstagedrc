@@ -1,0 +1,3 @@
+{
+    "*.{sol,md,json,yaml}": "prettier --write"
+}

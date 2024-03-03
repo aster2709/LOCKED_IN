@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.13;
 
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
  * @title PROOF OF LOCKED IN
@@ -53,7 +53,7 @@ contract LOCKED_IN {
         require(_amount != 0 && _duration >= 1 days, "BYE BYE");
         address mogger = msg.sender;
         amounts[mogger] += _amount;
-        timestamps[mogger] = block.timestamp +_duration;
+        timestamps[mogger] = block.timestamp + _duration;
         IERC20(MOG).transferFrom(mogger, address(this), _amount);
         emit LockedIn(mogger, _amount, _duration);
     }
